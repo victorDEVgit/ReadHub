@@ -1,8 +1,8 @@
 # 📚 ReadHub
 
-![GitHub repo size](https://img.shields.io/github/repo-size/ReadHub/ReadHub)
-![GitHub issues](https://img.shields.io/github/issues/ReadHub/ReadHub)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/ReadHub/ReadHub)
+![GitHub repo size](https://img.shields.io/github/repo-size/oidowu549-oss/ReadHub.git)
+![GitHub issues](https://img.shields.io/github/issues/oidowu549-oss/ReadHub.git)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/oidowu549-oss/ReadHub.git)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 **ReadHub** is a modern, cloud-based reading platform that allows readers to access their books from anywhere, on any device, with a sleek and fully customizable reading experience.
