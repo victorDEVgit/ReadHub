@@ -5,6 +5,7 @@ import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import connectDB from './config/db.js'
 import authRoutes from './routes/auth.routes.js'
+import cookieParser from 'cookie-parser'
 // import userRoutes from './routes/userRoutes.js'
 // import bookRoutes from './routes/bookRoutes.js'
 // import reviewRoutes from './routes/reviewRoutes.js'
@@ -12,8 +13,16 @@ import authRoutes from './routes/auth.routes.js'
 dotenv.config()
 
 const app = express()
+
+// Middleware
 app.use(cors())
 app.use(morgan('dev'))
+app.use(
+  cors({
+    origin: 'http://localhost:3000', // frontend URL
+    credentials: true,
+  }),
+)
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
