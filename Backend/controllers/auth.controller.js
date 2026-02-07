@@ -36,9 +36,7 @@ export const register = async (req, res) => {
       password: hashedPassword,
     })
     await newUser.save()
-    return res
-      .status(201)
-      .json({ message: 'User registered successfully', data: newUser })
+    return res.status(201).json({ message: 'User registered successfully' })
   } catch (error) {
     if (err.code === 11000) {
       return res.status(400).json({ error: 'Email or username already in use' })
