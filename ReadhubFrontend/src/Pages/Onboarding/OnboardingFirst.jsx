@@ -2,10 +2,17 @@ import React from 'react'
 import "../Onboarding/OnboardingFirst.css"
 import { ReadHubImages } from '../../assets/asset'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const OnboardingFirst = () => {
 
     const navigate = useNavigate();
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate("/onboarding2");
+        }, 2000)
+        return () => clearTimeout(timer);
+      }, [navigate] )
 
   return (
     <div className='page'>

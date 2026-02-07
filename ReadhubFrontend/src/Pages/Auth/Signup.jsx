@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import "../Auth/Signup.css"
 import { useNavigate } from 'react-router-dom';
 import { validateEmail } from './validate';
-import { VscNoNewline } from 'react-icons/vsc';
 import { ReadHubImages } from '../../assets/asset';
 
 const Signup = () => {
@@ -115,9 +114,9 @@ const Signup = () => {
                         </p>
             )}
 
-            <div className="submitButton">
+            <button type="submit" className="submitButton">
               <span>Create Account</span>
-            </div>
+            </button>
 
             <div className="separator">
               <hr className="short-line" />
@@ -135,7 +134,7 @@ const Signup = () => {
               <span onClick={()=> navigate("/login")} style={{color: "#2D7FF9"}}>Sign In</span>
             </div>
 
-        </div>
+            </div>
           </form>
       </div>
     </div>

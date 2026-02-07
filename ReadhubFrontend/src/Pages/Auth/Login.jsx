@@ -86,9 +86,9 @@ const navigate = useNavigate();
                         </p>
             )}
 
-            <div className="submitButton">
+            <button type="submit" className="submitButton">
               <span style={{padding: ".8rem 8.9rem", fontSize: "1rem"}}>Sign In</span>
-            </div>
+            </button>
 
             <div className="separator">
               <hr className="short-line" />
@@ -106,7 +106,7 @@ const navigate = useNavigate();
               <span onClick={()=> navigate("/signup")} style={{color: "#2D7FF9"}}>Sign Up</span>
             </div>
 
-        </div>
+            </div> 
           </form>
       </div>
     </div>
