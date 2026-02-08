@@ -19,11 +19,11 @@ const Notes = () => {
         </div>
 
         <div className="flex justify-between text-body_Small font-medium mb-4">
-          <div className="h-[38px] w-[171px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
+          <div className="h-[38px] w-[171px] xsm:w-[160px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
             <img src="/Variant3c.svg" alt="icon" className="w-[24px]" />
             <p>AI Summary</p>
           </div>
-          <div className="h-[38px] w-[171px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
+          <div className="h-[38px] w-[171px] xsm:w-[160px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
             <img src="/Variant3b.svg" alt="icon" className="w-[24px]" />
             <p>Create Blog Post</p>
           </div>

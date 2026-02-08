@@ -1,4 +1,5 @@
 import React from "react";
+import ContCard from "../Components/ContCard";
 
 const Home = () => {
   return (
@@ -9,19 +10,23 @@ const Home = () => {
             <img src="/profile.svg" alt="profile" className="w-[30px]" />
           </span>
           <span className="flex flex-col pl-1">
-            <p className="text-tittle_Small font-medium">Welcome back</p>
-            <p className="text-tittle_Large font-medium">ReadHub</p>
+            <p className="text-tittle_Small font-medium xsm:text-[13px]">
+              Welcome back
+            </p>
+            <p className="text-tittle_Large font-medium xsm:text-[18px]">
+              ReadHub
+            </p>
           </span>
         </div>
         <div>
-          <div className="w-fit h-[36px] bg-[#ff5800]/40 border-1 border-[#ff5b04] text-[#ff5b04] font-medium rounded-full flex justify-center items-center px-3 sm:px-[24px]">
+          <div className="w-fit h-[36px] bg-[#ff5800]/40 border-1 border-[#ff5b04] text-[#ff5b04] font-medium rounded-full flex justify-center items-center px-3 sm:px-[24px] xsm:text-[13px]">
             7 day Reading streak{" "}
-            <img src="/fire.svg" alt="fire" className="w-[24px]" />
+            <img src="/fire.svg" alt="fire" className="w-[24px] xsm:w-[16px]" />
           </div>
         </div>
       </div>
 
-      <div className="px-[16px] pb-[26px]">
+      <div className="px-[16px] pb-[26px] xsm:text-[15px]">
         <div className="bg-primary min-h-[177px] rounded-[20px] relative overflow-hidden text-white px-[16px] py-[23px] flex flex-col justify-between">
           <span className="flex h-[100px] w-[100px] bg-white/20 rounded-full absolute left-72 top-[-30px]"></span>
           <span className="flex h-[100px] w-[100px] bg-white/20 rounded-full absolute top-30 left-[-40px]"></span>
@@ -95,137 +100,22 @@ const Home = () => {
           <p className="text-black font-semibold mb-5 ">Continue Reading</p>
         </div>
 
-        <div className="bg-white px-[16px] py-2 rounded-[10px] mb-8">
-          <div className="flex justify-between mb-2">
-            <div className="h-[136px] flex w-[110px] rounded-[10px] bg-primary justify-center">
-              <img src="/note_stack.svg" alt="books" className="w-10" />
-            </div>
-            <div className="w-[210px] flex flex-col justify-between">
-              <div>
-                <p className="text-tittle_Medium text-black w- font-semibold">
-                  A Broken Peoples Playlist by John Faucet
-                </p>
-              </div>
-              <div>
-                <span className="flex text-tittle_Small text-[#5f5f61] justify-between mb-3 font-medium">
-                  <p>Progress</p>
-                  <p>50%</p>
-                </span>
-                <span className="flex h-[7px] bg-[#e6e6e6] rounded-[12px] relative">
-                  <span className="h-[7px] bg-primary w-30 rounded-full"></span>
-                </span>
-              </div>
-              <div>
-                <p className="text-[#5f5f61]">page 218 of 320</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button className="h-[46px] w-full rounded-[11px] bg-primary/56 text-primary font-semibold flex justify-center items-center">
-              <img src="/play_arrow.svg" alt="playicon" className="w-[24px]" />
-              Continue Reading
-            </button>
-          </div>
-        </div>
-
-        <div className="bg-white px-[16px] py-2 rounded-[10px] mb-8">
-          <div className="flex justify-between mb-2">
-            <div className="h-[136px] flex w-[110px] rounded-[10px] bg-primary justify-center">
-              <img src="/note_stack.svg" alt="books" className="w-10" />
-            </div>
-            <div className="w-[210px] flex flex-col justify-between">
-              <div>
-                <p className="text-tittle_Medium text-black w- font-semibold">
-                  A Broken Peoples Playlist by John Faucet
-                </p>
-              </div>
-              <div>
-                <span className="flex text-tittle_Small text-[#5f5f61] justify-between mb-3 font-medium">
-                  <p>Progress</p>
-                  <p>50%</p>
-                </span>
-                <span className="flex h-[7px] bg-[#e6e6e6] rounded-[12px] relative">
-                  <span className="h-[7px] bg-primary w-2 rounded-full"></span>
-                </span>
-              </div>
-              <div>
-                <p className="text-[#5f5f61]">page 218 of 320</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button className="h-[46px] w-full rounded-[11px] bg-primary/56 text-primary font-semibold flex justify-center items-center">
-              <img src="/play_arrow.svg" alt="playicon" className="w-[24px]" />
-              Continue Reading
-            </button>
-          </div>
-        </div>
-
-        <div className="bg-white px-[16px] py-2 rounded-[10px] mb-8">
-          <div className="flex justify-between mb-2">
-            <div className="h-[136px] flex w-[110px] rounded-[10px] bg-primary justify-center">
-              <img src="/note_stack.svg" alt="books" className="w-10" />
-            </div>
-            <div className="w-[210px] flex flex-col justify-between">
-              <div>
-                <p className="text-tittle_Medium text-black w- font-semibold">
-                  A Broken Peoples Playlist by John Faucet
-                </p>
-              </div>
-              <div>
-                <span className="flex text-tittle_Small text-[#5f5f61] justify-between mb-3 font-medium">
-                  <p>Progress</p>
-                  <p>50%</p>
-                </span>
-                <span className="flex h-[7px] bg-[#e6e6e6] rounded-[12px] relative">
-                  <span className="h-[7px] bg-primary w-10 rounded-full"></span>
-                </span>
-              </div>
-              <div>
-                <p className="text-[#5f5f61]">page 218 of 320</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button className="h-[46px] w-full rounded-[11px] bg-primary/56 text-primary font-semibold flex justify-center items-center">
-              <img src="/play_arrow.svg" alt="playicon" className="w-[24px]" />
-              Continue Reading
-            </button>
-          </div>
-        </div>
-
-        <div className="bg-white px-[16px] py-2 rounded-[10px] mb-8">
-          <div className="flex justify-between mb-2">
-            <div className="h-[136px] flex w-[110px] rounded-[10px] bg-primary justify-center">
-              <img src="/note_stack.svg" alt="books" className="w-10" />
-            </div>
-            <div className="w-[210px] flex flex-col justify-between">
-              <div>
-                <p className="text-tittle_Medium text-black w- font-semibold">
-                  A Broken Peoples Playlist by John Faucet
-                </p>
-              </div>
-              <div>
-                <span className="flex text-tittle_Small text-[#5f5f61] justify-between mb-3 font-medium">
-                  <p>Progress</p>
-                  <p>50%</p>
-                </span>
-                <span className="flex h-[7px] bg-[#e6e6e6] rounded-[12px] relative">
-                  <span className="h-[7px] bg-primary w-20 rounded-full"></span>
-                </span>
-              </div>
-              <div>
-                <p className="text-[#5f5f61]">page 218 of 320</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button className="h-[46px] w-full rounded-[11px] bg-primary/56 text-primary font-semibold flex justify-center items-center">
-              <img src="/play_arrow.svg" alt="playicon" className="w-[24px]" />
-              Continue Reading
-            </button>
-          </div>
-        </div>
+        <ContCard
+          fileName={"A broken people playlist"}
+          page={10}
+          totalPage={100}
+        ></ContCard>
+        <ContCard
+          fileName={"The power of habit"}
+          page={10}
+          totalPage={100}
+        ></ContCard>
+        <ContCard
+          fileName={"Atomic habits"}
+          page={20}
+          totalPage={100}
+        ></ContCard>
+        <ContCard fileName={"Deep work"} page={30} totalPage={100}></ContCard>
       </div>
     </div>
   );

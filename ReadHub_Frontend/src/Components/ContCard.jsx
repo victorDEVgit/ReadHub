@@ -1,16 +1,16 @@
 import React from "react";
 
-const ContCard = () => {
+const ContCard = ({ fileName, page, totalPage }) => {
   return (
     <div className="bg-white px-[16px] py-2 rounded-[10px] mb-8">
       <div className="flex justify-between mb-2">
-        <div className="h-[136px] flex w-[110px] rounded-[10px] bg-primary justify-center">
+        <div className="h-[136px] flex w-[110px] rounded-[10px] bg-primary justify-center xsm:w-[100px] xsm:h-[120px]">
           <img src="/note_stack.svg" alt="books" className="w-10" />
         </div>
-        <div className="w-[210px] flex flex-col justify-between">
+        <div className="w-[210px] xsm:w-[185px] flex flex-col justify-evenly">
           <div>
             <p className="text-tittle_Medium text-black w- font-semibold">
-              A Broken Peoples Playlist by John Faucet
+              {fileName}
             </p>
           </div>
           <div>
@@ -23,7 +23,9 @@ const ContCard = () => {
             </span>
           </div>
           <div>
-            <p className="text-[#5f5f61]">page 218 of 320</p>
+            <p className="text-[#5f5f61] xsm:text-[15px]">
+              {"page" + " " + page + " of " + " " + totalPage}
+            </p>
           </div>
         </div>
       </div>

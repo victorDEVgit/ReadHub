@@ -1,7 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import ContCard from "../Components/ContCard";
+import { Document, Page, pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const Library = () => {
+  const [files, setFiles] = useState([]);
+
+  const [textContent, setTextContent] = useState("");
+  const [pdfContent, setPdfContent] = useState(null);
+
+  const [fileType, setFileType] = useState(null);
+  const [fileName, setFileName] = useState("");
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [showPdf, setShowPdf] = useState(false);
+
+  const handleFileSElect = (event) => {
+    const selectedFile = event.target.files[0];
+
+    if (!selectedFile) return;
+    setFileName(selectedFile.name);
+
+    if (
+      selectedFile.type === "application/pdf" ||
+      selectedFile.name.endsWith(".pdf")
+    ) {
+      handlePdf(selectedFile);
+      console.log(fileName);
+    } else if (
+      selectedFile.type.startsWith("text/") ||
+      selectedFile.name.endsWith(".txt") ||
+      selectedFile.name.endsWith(".md")
+    ) {
+      handleTextFile(selectedFile);
+    } else {
+      alert("Unsupported file type. Please upload .txt, .md, or .pdf files.");
+    }
+  };
+
+  const handlePdf = (file) => {
+    setFileType("pdf");
+    setPdfContent(file);
+
+    setFiles((prevFiles) => [...prevFiles, file]);
+  };
+  console.log(pdfContent);
+  console.log(fileType);
+  console.log(files);
+
+  const handleTextFile = (file) => {
+    setFileType("text");
+
+    setFiles((prevFiles) => [...prevFiles, file]);
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setTextContent(e.target.result);
+    };
+
+    reader.readAsText(file);
+  };
+
+  const goToPreviousPage = () => {
+    setPageNumber((prev) => Math.max(1, prev - 1));
+  };
+
+  const goToNextPage = () => {
+    setPageNumber((prev) => Math.min(numPages, prev + 1));
+  };
+
   return (
     <div className="px-[16px] pt-[40px] overflow-hidden pb-15">
       <div className="flex justify-between mb-8 items-center">
@@ -19,11 +88,22 @@ const Library = () => {
       </div>
 
       <div className="flex justify-between text-body_Small font-medium mb-4">
-        <div className="h-[38px] w-[171px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
+        <label
+          htmlFor="fileselect"
+          className="h-[38px] xsm:w-[160px] w-[171px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center"
+        >
+          <input
+            type="file"
+            accept=".txt,.pdf"
+            id="fileselect"
+            onChange={handleFileSElect}
+            className="hidden"
+            multiple
+          />
           <img src="/Variant3c.svg" alt="icon" className="w-[24px]" />
           <p>Upload file</p>
-        </div>
-        <div className="h-[38px] w-[171px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
+        </label>
+        <div className="h-[38px] w-[171px] xsm:w-[160px] border-1 rounded-[33px] border-[#4b6481] flex justify-center items-center">
           <img src="/Variant3b.svg" alt="icon" className="w-[24px]" />
           <p>Scan Cover</p>
         </div>
@@ -49,9 +129,14 @@ const Library = () => {
       </div>
 
       <div>
-        <ContCard />
-        <ContCard />
-        <ContCard />
+        {files.map((file) => (
+          <ContCard
+            key={file.id}
+            fileName={file.name}
+            page={pageNumber}
+            totalPage={numPages}
+          />
+        ))}
       </div>
     </div>
   );
